@@ -158,35 +158,28 @@ expenseTableEl.innerHTML=joinedAllExpenseHTML;
 
 function createListItem({desc,amount,moment}){return ` 
 	<li class="list-group-item d-flex justify-content-between">
+    <div class="d-flex flex-column">
+      ${desc}
 
-							<div class="d-flex flex-column">
+		<small class="text-muted">${getDateString(moment)}</small></div>
 
-								${desc}
+	 <div>
+      <span class="px-5">
+        ${amount}
+      </span>
 
-								<small class="text-muted">${getDateString(moment)}</small>
-
-							</div>
-
-							<div>
-
-								<span class="px-5">
-
-									${amount}
-
-								</span>
-
-								<button
+			<button
  type="button"
  class="btn btn-outline-danger btn-sm"
 onclick="deleteItem(${moment.valueOf()})">
 
-									<i class="fas fa-trash-alt"></i>
+			<i class="fas fa-trash-alt"></i>
 
-								</button>
+			</button>
 
-							</div>
+		</div>
 
-						</li>`;
+	</li>`;
 }
 
 
